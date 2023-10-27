@@ -17,7 +17,7 @@ services:
     image: postgis/postgis:13-master
     restart: always
     # Required when running on platform other than amd64, like Apple M1/M2:
-    # platform: linux/amd64
+    platform: linux/amd64
     volumes:
       - ./data/database:/var/lib/postgresql/data
     environment:
