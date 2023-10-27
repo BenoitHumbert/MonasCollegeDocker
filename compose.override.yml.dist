@@ -1,0 +1,30 @@
+version: '3'
+services:
+  caddy:
+    restart: unless-stopped
+  
+  
+    volumes:
+      - ./caddy/Caddyfile.dev:/etc/caddy/Caddyfile
+  database:
+    restart: unless-stopped
+    image: postgis/postgis:13-master
+    # Required when running on platform other than amd64, like Apple M1/M2:
+    platform: linux/amd64
+    ports:
+      - 5432:5432
+
+  cache:
+    restart: unless-stopped    
+
+  directus:
+    restart: unless-stopped
+    volumes:
+      - ./uploads:/directus/uploads
+      # If you want to load extensions from the host
+      # - ./extensions:/directus/extensions
+   
+    environment:
+      PUBLIC_URL: 'http://localhost:8055'
+      LOG_LEVEL: 'debug'
+    
