@@ -2,8 +2,6 @@ version: '3'
 services:
   caddy:
     restart: unless-stopped
-  
-  
     volumes:
       - ./caddy/Caddyfile.dev:/etc/caddy/Caddyfile
   database:
