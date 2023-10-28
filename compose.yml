@@ -17,7 +17,7 @@ services:
     image: postgis/postgis:13-master
     restart: always
     # Required when running on platform other than amd64, like Apple M1/M2:
-    # platform: linux/amd64
+    platform: linux/amd64
     volumes:
       - ./data/database:/var/lib/postgresql/data
     environment:
@@ -32,7 +32,7 @@ services:
     image: redis:6
 
   directus:
-    image: directus/directus:10.7.0
+    image: directus/directus:10.7.1
     restart: always
     ports:
       - 8055:8055
