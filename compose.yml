@@ -3,8 +3,8 @@ services:
   caddy:
     image: caddy:2.7
     restart: always
-    cap_add:
-      - NET_ADMIN
+    #cap_add:
+      #- NET_ADMIN
     ports:
       - "80:80"
       - "443:443"
