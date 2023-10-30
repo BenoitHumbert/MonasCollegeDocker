@@ -1,3 +1,5 @@
-monascollegeapp.bhdev.org
+monascollegeapp.bhdev.org:443{
+    cors /
+}
 
 reverse_proxy http://directus:8055
