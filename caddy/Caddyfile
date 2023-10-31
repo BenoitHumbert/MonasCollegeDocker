@@ -9,7 +9,7 @@ monascollegeapp.bhdev.org {
 	respond @cors_preflight 204
 	
     header {
-        Access-Control-Allow-Origin https://www.bhdev.org
+        Access-Control-Allow-Origin http://localhost
         Access-Control-Allow-Methods GET,POST,OPTIONS,HEAD,PATCH,PUT,DELETE
         Access-Control-Allow-Headers User-Agent,Content-Type,X-Api-Key
         Access-Control-Max-Age 86400
