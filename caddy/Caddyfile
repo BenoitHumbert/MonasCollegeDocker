@@ -1,4 +1,4 @@
-monascollegeapp.bhdev.org {
+https://monascollegeapp.bhdev.org {
     @options {
         method OPTIONS
     }
