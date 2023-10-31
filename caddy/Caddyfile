@@ -1,4 +1,19 @@
-monascollegeapp.bhdev.org
+# monascollegeapp.bhdev.org
+
+# reverse_proxy http://directus:8055
+
+monascollegeapp.bhdev.org {
+    @cors_preflight {
+		method OPTIONS
+	}
+	respond @cors_preflight 204
+	
+    header {
+        Access-Control-Allow-Origin https://www.bhdev.org
+        Access-Control-Allow-Methods GET,POST,OPTIONS,HEAD,PATCH,PUT,DELETE
+        Access-Control-Allow-Headers User-Agent,Content-Type,X-Api-Key
+        Access-Control-Max-Age 86400
+    }
 
 reverse_proxy http://directus:8055
-
+}
