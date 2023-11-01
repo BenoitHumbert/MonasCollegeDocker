@@ -2,7 +2,7 @@
 
 # reverse_proxy http://directus:8055
 
-monascollegeapp.bhdev.org {
+https://monascollegeapp.bhdev.org {
     @cors_preflight {
 		method OPTIONS
 	}
