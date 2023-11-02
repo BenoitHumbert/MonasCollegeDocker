@@ -32,7 +32,7 @@
 
 monascollegeapp.bhdev.org {
 
-    reverse_proxy http://directus:8055
+    
     # Autres directives Caddy pour la configuration de votre site
 
     # Activer CORS pour autoriser les requêtes depuis https://websitetest.bhdev.org
@@ -43,4 +43,6 @@ monascollegeapp.bhdev.org {
     }
     respond 204
 }
+
+reverse_proxy http://directus:8055
 
