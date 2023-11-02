@@ -1,6 +1,6 @@
-# monascollegeapp.bhdev.org
+monascollegeapp.bhdev.org
 
-# reverse_proxy http://directus:8055
+reverse_proxy http://directus:8055
 
 # https://monascollegeapp.bhdev.org {
 #     @cors_preflight {
@@ -30,19 +30,21 @@
 # }
 
 
-monascollegeapp.bhdev.org {
+
+
+# monascollegeapp.bhdev.org {
 
     
-    # Autres directives Caddy pour la configuration de votre site
+#     # Autres directives Caddy pour la configuration de votre site
 
-    # Activer CORS pour autoriser les requêtes depuis https://websitetest.bhdev.org
-    header / {
-        Access-Control-Allow-Origin 'https://websitetest.bhdev.org'
-        Access-Control-Allow-Methods 'GET, POST, OPTIONS, PUT, DELETE'
-        Access-Control-Allow-Headers Origin, Content-Type, Accept
-    }
-    respond 204
-}
+#     # Activer CORS pour autoriser les requêtes depuis https://websitetest.bhdev.org
+#     header / {
+#         Access-Control-Allow-Origin 'https://websitetest.bhdev.org'
+#         Access-Control-Allow-Methods 'GET, POST, OPTIONS, PUT, DELETE'
+#         Access-Control-Allow-Headers Origin, Content-Type, Accept
+#     }
+#     respond 204
+# }
 
-reverse_proxy http://directus:8055
+# reverse_proxy http://directus:8055
 
