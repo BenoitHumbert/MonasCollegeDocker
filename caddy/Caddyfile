@@ -30,7 +30,7 @@
 # }
 
 
-https://monascollegeapp.bhdev.org {
+monascollegeapp.bhdev.org {
 
     reverse_proxy http://directus:8055
     # Autres directives Caddy pour la configuration de votre site
@@ -41,5 +41,6 @@ https://monascollegeapp.bhdev.org {
         Access-Control-Allow-Methods GET, POST, OPTIONS, PUT, DELETE
         Access-Control-Allow-Headers Origin, Content-Type, Accept
     }
+    respond 204
 }
 
