@@ -39,8 +39,8 @@ https://monascollegeapp.bhdev.org {
     # Activer CORS pour autoriser les requêtes depuis https://websitetest.bhdev.org
     header / {
         Access-Control-Allow-Origin https://websitetest.bhdev.org
-        Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE"
-        Access-Control-Allow-Headers "Origin, Content-Type, Accept"
+        Access-Control-Allow-Methods GET, POST, OPTIONS, PUT, DELETE
+        Access-Control-Allow-Headers Origin, Content-Type, Accept
     }
 }
 
