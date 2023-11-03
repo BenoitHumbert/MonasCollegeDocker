@@ -2,6 +2,9 @@ monascollegeapp.bhdev.org {
     @cors_preflight {
 		method OPTIONS
 	}
+
+    respond @cors_preflight 204
+    
     @origin1 {
         header Origin https://websitetest.bhdev.org
 	}
@@ -20,7 +23,7 @@ monascollegeapp.bhdev.org {
         Access-Control-Max-Age 86400
     }
 
-    respond @cors_preflight 204
+   
 
 }
 
