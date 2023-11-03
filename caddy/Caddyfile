@@ -1,4 +1,4 @@
-monascollegeapp.bhdev.org {
+monascollegeapp.bhdev.org/ {
 
     header {
         Access-Control-Allow-Origin https://monascollege.bhdev.org
