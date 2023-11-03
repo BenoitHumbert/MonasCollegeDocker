@@ -1,12 +1,5 @@
-monascollegeapp.bhdev.org {
-    
-    header {
-        Access-Control-Allow-Origin 'https://websitetest.bhdev.org'
-        Access-Control-Allow-Methods 'GET, POST, OPTIONS, PUT, DELETE'
-        Access-Control-Allow-Headers Origin, Content-Type, Accept
-    }
-    respond 204
+monascollegeapp.bhdev.org 
 
 reverse_proxy http://directus:8055
-}
+
 
