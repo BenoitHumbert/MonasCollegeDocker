@@ -2,8 +2,6 @@ https://monascollegeapp.bhdev.org {
     @cors_preflight {
 		method OPTIONS
 	}
-	respond @cors_preflight 204
-	
     @origin1 {
         header Origin https://websitetest.bhdev.org
 	}
@@ -16,12 +14,13 @@ https://monascollegeapp.bhdev.org {
 	header @origin2 {
         Access-Control-Allow-Origin https://monascollegeweb.bhdev.org
 	}
-	
     header {
         Access-Control-Allow-Methods GET,POST,OPTIONS,HEAD,PATCH,PUT,DELETE
         Access-Control-Allow-Headers User-Agent,Content-Type,X-Api-Key
         Access-Control-Max-Age 86400
     }
+
+    respond @cors_preflight 204
 
 }
 
