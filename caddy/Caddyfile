@@ -1,33 +1,33 @@
-monascollegeapp.bhdev.org
+# monascollegeapp.bhdev.org
 
-reverse_proxy http://directus:8055
+# reverse_proxy http://directus:8055
 
-# https://monascollegeapp.bhdev.org {
-#     @cors_preflight {
-# 		method OPTIONS
-# 	}
-# 	respond @cors_preflight 204
+https://monascollegeapp.bhdev.org {
+    @cors_preflight {
+		method OPTIONS
+	}
+	respond @cors_preflight 204
 	
-#     @origin1 {
-#         header Origin https://websitetest.bhdev.org
-# 	}
-# 	header @origin1 {
-#         Access-Control-Allow-Origin https://websitetest.bhdev.org
-# 	}
-# 	@origin2 {
-#         header Origin https://www.websitetest.bhdev.orge
-# 	}
-# 	header @origin2 {
-#         Access-Control-Allow-Origin https://www.websitetest.bhdev.org
-# 	}
+    @origin1 {
+        header Origin https://websitetest.bhdev.org
+	}
+	header @origin1 {
+        Access-Control-Allow-Origin https://websitetest.bhdev.org
+	}
+	@origin2 {
+        header Origin https://monascollegeweb.bhdev.org
+	}
+	header @origin2 {
+        Access-Control-Allow-Origin https://monascollegeweb.bhdev.org
+	}
 	
-#     header {
-#         Access-Control-Allow-Methods GET,POST,OPTIONS,HEAD,PATCH,PUT,DELETE
-#         Access-Control-Allow-Headers User-Agent,Content-Type,X-Api-Key
-#         Access-Control-Max-Age 86400
-#     }
+    header {
+        Access-Control-Allow-Methods GET,POST,OPTIONS,HEAD,PATCH,PUT,DELETE
+        Access-Control-Allow-Headers User-Agent,Content-Type,X-Api-Key
+        Access-Control-Max-Age 86400
+    }
 
-# }
+}
 
 
 
