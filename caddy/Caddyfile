@@ -1,4 +1,4 @@
-monascollegeapp.bhdev.org {
+https://monascollegeapp.bhdev.org {
 
     header {
         Access-Control-Allow-Origin https://monascollege.bhdev.org
@@ -6,9 +6,8 @@ monascollegeapp.bhdev.org {
         Access-Control-Allow-Headers *
     }
     
-    reverse_proxy http://directus:8055
+    reverse_proxy http://directus:8055 
 }
-
 
 
 
