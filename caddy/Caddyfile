@@ -1,19 +1,12 @@
 https://monascollegeapp.bhdev.org {
 
-    reverse_proxy http://directus:8055 {}
-
-    header / {
-        Access-Control-Allow-Origin 'https://websitetest.bhdev.org'
-        Access-Control-Allow-Methods 'GET, POST, OPTIONS, PUT, DELETE'
-        Access-Control-Allow-Headers Origin, Content-Type, Accept
+    header {
+        Access-Control-Allow-Origin https://monascollege.bhdev.org
+        Access-Control-Allow-Methods GET, POST, OPTIONS, PUT, DELETE
+        Access-Control-Allow-Headers *
     }
-<<<<<<< Updated upstream
-    respond 204
-=======
     
-    reverse_proxy http://directus:8055
-    
->>>>>>> Stashed changes
+    reverse_proxy http://directus:8055 
 }
 
 
