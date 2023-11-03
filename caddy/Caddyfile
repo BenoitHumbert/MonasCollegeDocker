@@ -1,4 +1,4 @@
-https://monascollegeapp.bhdev.org {
+monascollegeapp.bhdev.org {
     @cors_preflight {
 		method OPTIONS
 	}
