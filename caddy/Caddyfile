@@ -7,7 +7,13 @@ https://monascollegeapp.bhdev.org {
         Access-Control-Allow-Methods 'GET, POST, OPTIONS, PUT, DELETE'
         Access-Control-Allow-Headers Origin, Content-Type, Accept
     }
+<<<<<<< Updated upstream
     respond 204
+=======
+    
+    reverse_proxy http://directus:8055
+    
+>>>>>>> Stashed changes
 }
 
 
