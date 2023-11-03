@@ -3,8 +3,8 @@ monascollegeapp.bhdev.org {
         Access-Control-Allow-Origin https://monascollege.bhdev.org
         Access-Control-Allow-Methods GET, POST, OPTIONS, PUT, DELETE
         Access-Control-Allow-Headers *
-    reverse_proxy http://directus:8055 
     }
+    reverse_proxy http://directus:8055 
 }
 
 
