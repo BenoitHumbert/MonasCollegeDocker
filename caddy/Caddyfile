@@ -7,8 +7,8 @@ monascollegeapp.bhdev.org {
         Access-Control-Allow-Methods OPTIONS 
         Access-Control-Allow-Methods PUT 
         Access-Control-Allow-Methods DELETE
-        Access-Control-Allow-Headers Content-Type
         Access-Control-Allow-Headers Authorization
+        Access-Control-Allow-Headers Content-Type
         Access-Control-Allow-Headers authorization
         Access-Control-Allow-Headers X-Custom-Header
         
