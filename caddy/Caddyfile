@@ -7,8 +7,9 @@ monascollegeapp.bhdev.org {
         Access-Control-Allow-Methods OPTIONS 
         Access-Control-Allow-Methods PUT 
         Access-Control-Allow-Methods DELETE
-        -Access-Control-Allow-Headers
         Access-Control-Allow-Headers Authorization, Authorization, X-Custom-Header      
+        Content-Type application/json; charset=utf-8
+        Accept */*
     }
     reverse_proxy http://directus:8055 
 }
