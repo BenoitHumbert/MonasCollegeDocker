@@ -1,7 +1,8 @@
 monascollegeapp.bhdev.org {
     header {
         Access-Control-Allow-Origin https://monascollege.bhdev.org
-        Access-Control-Allow-Methods GET, POST, OPTIONS, PUT, DELETE, PATCH
+        Access-Control-Allow-Methods GET, POST, OPTIONS, PUT, DELETE, PATCH, HEAD
+        Access-Control-Request-Method GET, POST, OPTIONS, PUT, DELETE, PATCH, HEAD
         Access-Control-Allow-Headers *
     }
     reverse_proxy http://directus:8055 
