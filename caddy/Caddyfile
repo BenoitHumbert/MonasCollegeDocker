@@ -1,18 +1,22 @@
-monascollegeapp.bhdev.org {
-    header {
-        Access-Control-Allow-Origin https://monascollege.bhdev.org
-        Access-Control-Allow-Methods GET 
-        Access-Control-Allow-Methods PATCH 
-        Access-Control-Allow-Methods POST 
-        Access-Control-Allow-Methods OPTIONS 
-        Access-Control-Allow-Methods PUT 
-        Access-Control-Allow-Methods DELETE
-        Access-Control-Allow-Headers Authorization, Authorization, X-Custom-Header      
-        Content-Type application/json; charset=utf-8
-        Accept */*
-    }
-    reverse_proxy http://directus:8055 
-}
+monascollegeapp.bhdev.org
+
+reverse_proxy http://directus:8055 
+
+# monascollegeapp.bhdev.org {
+#     header {
+#         Access-Control-Allow-Origin https://monascollege.bhdev.org
+#         Access-Control-Allow-Methods GET 
+#         Access-Control-Allow-Methods PATCH 
+#         Access-Control-Allow-Methods POST 
+#         Access-Control-Allow-Methods OPTIONS 
+#         Access-Control-Allow-Methods PUT 
+#         Access-Control-Allow-Methods DELETE
+#         Access-Control-Allow-Headers Authorization, Authorization, X-Custom-Header      
+#         Content-Type application/json; charset=utf-8
+#         Accept */*
+#     }
+#     reverse_proxy http://directus:8055 
+# }
 
 
 
