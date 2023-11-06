@@ -32,7 +32,7 @@ services:
     image: redis:6
 
   directus:
-    image: directus/directus:10.7
+    image: directus/directus:10.7.2
     restart: always
     ports:
       - 8055:8055
@@ -46,6 +46,8 @@ services:
       KEY: '255d861b-5ea1-5996-9aa3-922530ec40b1'
       SECRET_FILE: '/run/secrets/directus_secret'
       LOG_LEVEL: 'error'
+      CORS_ENABLED: "true"
+      CORS_ORIGIN: "https://monascollege.bhdev.org"
 
       DB_CLIENT: 'pg'
       DB_HOST: 'database'
