@@ -47,7 +47,7 @@ services:
       SECRET_FILE: '/run/secrets/directus_secret'
       LOG_LEVEL: 'error'
       CORS_ENABLED: "true"
-      CORS_ORIGIN: "https://monascollege.bhdev.org, https://unsubscribemonascollege.bhdev.org"
+      CORS_ORIGIN: https://monascollege.bhdev.org, https://unsubscribemonascollege.bhdev.org
 
       DB_CLIENT: 'pg'
       DB_HOST: 'database'
