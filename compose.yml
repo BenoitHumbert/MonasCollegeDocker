@@ -50,7 +50,7 @@ services:
       CORS_ORIGIN: 'https://monascollege.bhdev.org,https://unsubscribemonascollege.bhdev.org'
       
       EMAIL_TRANSPORT: 'smtp'
-      EMAIL_FROM: 'no-reply@mdirectus.io'
+      EMAIL_FROM: 'no-reply@directus.io'
       EMAIL_SMTP_HOST: 'smtp-relay.sendinblue.com'
       EMAIL_SMTP_PORT: '587'
       EMAIL_SMTP_USER: 'bhumbert.dev@gmail.com'
