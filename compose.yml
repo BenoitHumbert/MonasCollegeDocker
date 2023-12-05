@@ -48,6 +48,14 @@ services:
       LOG_LEVEL: 'error'
       CORS_ENABLED: 'true'
       CORS_ORIGIN: 'https://monascollege.bhdev.org,https://unsubscribemonascollege.bhdev.org'
+      
+      EMAIL_TRANSPORT: 'smtp'
+      EMAIL_FROM: 'no-reply@monascollege.fr'
+      EMAIL_SMTP_HOST: 'smtp-relay.sendinblue.com'
+      EMAIL_SMTP_PORT: '587'
+      EMAIL_SMTP_USER: 'bhumbert.dev@gmail.com'
+      EMAIL_SMTP_PASSWORD: 'Pabqfys1gnBpY4jz'
+      PASSWORD_RESET_URL_ALLOW_LIST: 'https://monascollegeresetpassword.bhdev.org'
                     
       DB_CLIENT: 'pg'
       DB_HOST: 'database'
@@ -55,6 +63,7 @@ services:
       DB_DATABASE: 'directus'
       DB_USER: 'directus'
       DB_PASSWORD_FILE: '/run/secrets/database_password'
+      
 
       # CACHE_ENABLED: 'true'
       # CACHE_STORE: 'redis'
