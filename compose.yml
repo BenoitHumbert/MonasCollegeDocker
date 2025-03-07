@@ -32,7 +32,7 @@ services:
   #   image: redis:6
 
   directus:
-    image: directus/directus:10.8.2
+    image: directus/directus:10.9.0
     restart: always
     ports:
       - 8055:8055
@@ -48,6 +48,8 @@ services:
       LOG_LEVEL: 'error'
       CORS_ENABLED: 'true'
       CORS_ORIGIN: 'https://monascollege.bhdev.org,https://unsubscribemonascollege.bhdev.org,https://monascollegeresetpassword.bhdev.org'
+      # CORS_ORIGIN: '*'
+      WEBSOCKETS_ENABLED: 'true'
       
       EMAIL_TRANSPORT: 'smtp'
       EMAIL_FROM: 'no-reply@directus.io'
