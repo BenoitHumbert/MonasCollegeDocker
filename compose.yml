@@ -10,6 +10,8 @@ services:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
       - ./caddy/data:/data
       - ./caddy/config:/config
+    networks:
+      - monascollege_network
     environment:
       - CADDY_LISTEN=0.0.0.0
     healthcheck:
@@ -63,6 +65,8 @@ services:
     depends_on:
       database:
         condition: service_healthy
+    networks:
+      - monascollege_network
 
     environment:
       PUBLIC_URL: 'https://monascollegeapp.bhdev.org'
@@ -114,6 +118,10 @@ services:
 
 volumes:
   directus_uploads:
+
+networks:
+  monascollege_network:
+    driver: bridge
 
 secrets:
   database_password:
