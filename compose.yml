@@ -51,6 +51,8 @@ services:
       - ./scripts/purge_directus_activity_secure.sh:/usr/local/bin/purge_directus_activity_secure.sh
       - ./scripts/cronjob:/etc/cronjob
       - ./secrets/database_password.txt:/run/secrets/database_password:ro
+    networks:
+      - monascollege_network
     depends_on:
       - database
 
