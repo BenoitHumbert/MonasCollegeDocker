@@ -1,0 +1,13 @@
+FROM alpine:latest
+
+RUN apk add --no-cache curl bash postgresql-client \
+  && curl -fsSLO https://github.com/aptible/supercronic/releases/download/v0.2.29/supercronic-linux-amd64 \
+  && mv supercronic-linux-amd64 /usr/local/bin/supercronic \
+  && chmod +x /usr/local/bin/supercronic
+
+COPY ./scripts/purge_directus_activity_secure.sh /usr/local/bin/
+COPY ./scripts/cronjob /etc/cronjob
+
+RUN chmod +x /usr/local/bin/purge_directus_activity_secure.sh
+
+CMD ["sh", "-c", "chmod +x /usr/local/bin/purge_directus_activity_secure.sh && supercronic /etc/cronjob"]

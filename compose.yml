@@ -1,4 +1,3 @@
-
 services:
   caddy:
     image: caddy:2.8
@@ -14,7 +13,7 @@ services:
     environment:
       - CADDY_LISTEN=0.0.0.0
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost"]
+      test: [ "CMD", "curl", "-f", "http://localhost" ]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -30,7 +29,7 @@ services:
       POSTGRES_PASSWORD_FILE: '/run/secrets/database_password'
       POSTGRES_DB: 'directus'
     healthcheck:
-      test: ["CMD", "pg_isready", "--host=localhost", "--username=directus"]
+      test: [ "CMD", "pg_isready", "--host=localhost", "--username=directus" ]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -39,9 +38,20 @@ services:
     secrets:
       - database_password
 
+  cron-purger:
+    build:
+      context: .
+      dockerfile: dockerfile_cron
+    restart: always
+    volumes:
+      - ./scripts/purge_directus_activity_secure.sh:/usr/local/bin/purge_directus_activity_secure.sh
+      - ./scripts/cronjob:/etc/cronjob
+      - ./secrets/database_password.txt:/run/secrets/database_password:ro
+    depends_on:
+      - database
 
   directus:
-    image: directus/directus:11.5.1
+    image: directus/directus:11.6.1
     restart: always
     ports:
       - 8055:8055
@@ -60,7 +70,7 @@ services:
       CORS_ORIGIN: 'https://monascollege.bhdev.org,https://unsubscribemonascollege.bhdev.org,https://monascollegeresetpassword.bhdev.org'
       # CORS_ORIGIN: '*'
       WEBSOCKETS_ENABLED: 'true'
-      
+
       EMAIL_TRANSPORT: 'smtp'
       EMAIL_FROM: 'no-reply-college@bhdev.org'
       EMAIL_SMTP_HOST: 'mail.your-server.de'
@@ -68,32 +78,33 @@ services:
       EMAIL_SMTP_USER: 'no-reply-college@bhdev.org'
       EMAIL_SMTP_PASSWORD_FILE: '/run/secrets/email_smtp_password'
       PASSWORD_RESET_URL_ALLOW_LIST: 'https://monascollegeresetpassword.bhdev.org'
-                    
+
       DB_CLIENT: 'pg'
       DB_HOST: 'database'
       DB_PORT: '5432'
       DB_DATABASE: 'directus'
       DB_USER: 'directus'
       DB_PASSWORD_FILE: '/run/secrets/database_password'
-      
-
-   
 
       ADMIN_EMAIL: 'humbert.dev@gmail.com'
       ADMIN_PASSWORD_FILE: '/run/secrets/directus_admin_password'
-    
-
       # Make sure to set this in production 
       # (see https://docs.directus.io/self-hosted/config-options#general)
       # PUBLIC_URL: 'https://directus.example.com'
-      
+    
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "10"  
+
     secrets:
       - database_password
       - directus_secret
       - directus_admin_password
       - email_smtp_password
     healthcheck:
-      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:8055/_/health"]
+      test: [ "CMD", "wget", "--spider", "-q", "http://127.0.0.1:8055/server/health" ]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -105,5 +116,5 @@ secrets:
     file: ./secrets/directus_secret.txt
   directus_admin_password:
     file: ./secrets/directus_admin_password.txt
-  email_smtp_password : 
-    file : ./secrets/email_smtp_password.txt
+  email_smtp_password:
+    file: ./secrets/email_smtp_password.txt

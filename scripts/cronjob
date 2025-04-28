@@ -1,0 +1,1 @@
+0 4 * * 0 /usr/local/bin/purge_directus_activity_secure.sh >> /var/log/purge_directus_activity.log 2>&1
