@@ -58,6 +58,8 @@ services:
     volumes:
       # - ./uploads:/directus/uploads
       - directus_uploads:/directus/uploads
+    extra_hosts:
+      - "mail.your-server.de:78.46.5.205"
     depends_on:
       database:
         condition: service_healthy
