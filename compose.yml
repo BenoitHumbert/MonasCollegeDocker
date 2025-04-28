@@ -26,6 +26,8 @@ services:
     # platform: linux/amd64
     volumes:
       - ./data/database:/var/lib/postgresql/data
+    networks:
+      - monascollege_network
     environment:
       POSTGRES_USER: 'directus'
       POSTGRES_PASSWORD_FILE: '/run/secrets/database_password'
