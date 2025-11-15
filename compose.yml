@@ -57,7 +57,7 @@ services:
       - database
 
   directus:
-    image: directus/directus:11.6.1
+    image: directus/directus:11.13.2
     restart: always
     ports:
       - 8055:8055
